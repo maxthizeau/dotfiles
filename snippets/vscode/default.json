@@ -1,0 +1,12 @@
+{
+    "Create for loop":{
+    "prefix": "afor",
+    "body":[
+      "for(int i = 0; i < 10; i++)",
+      "{",
+      "   //code goes here",
+      "}"
+    ],
+   "description": "Creates a for loop"
+  }
+}
