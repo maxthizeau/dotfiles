@@ -1,0 +1,105 @@
+{
+    "React FC With Children": {
+        "scope": "javascriptreact, typescriptreact",
+        "prefix": "mtrfc-c",
+        "body": [
+            "import { FC, ReactNode } from 'react'",
+            "",
+            "interface IProps {",
+                "children: ReactNode",
+                "}",
+                "",
+                "const ${0:Container}: FC<IProps> = ({ children }) => {",
+                    "return <>{children}</>",
+                    "}",
+                    "",
+                    "export default ${0:Container}",
+
+        ],
+        "description": "Create a React Functionnal Component with children and ts interface"
+    },
+    "React FC": {
+        "scope": "javascriptreact, typescriptreact",
+        "prefix": "mtrfc",
+        "body": [
+
+            "import React from 'react'",
+            "",
+            "type Props = unknown",
+            "",
+            "const ${0:ComponentName}: React.FC<Props> = () => {",
+                "  return (",
+                    "   <>",
+                    "        Content",
+                    "    </>",
+                    "  )",
+                    "}",
+                    "",
+                    "export default ${0:ComponentName}"
+
+
+        ],
+        "description": "Create a React Functionnal Component with ts interface"
+    }, 
+    "React Context": {
+        "scope": "javascriptreact, typescriptreact",
+        "prefix": "mtrctx",
+        "body": [
+            "import React, { createContext, useMemo } from 'react'",
+            "",
+            "const ${0:Name}Context = createContext<{",
+                "  message: string",
+                "  print: (text: string) => void",
+                "} | null>(null)",
+                "",
+                "export const ${0:Name}Provider = ({",
+                    "  children,",
+                    "}: {",
+                    "  children: React.ReactNode",
+                    "}) => {",
+                    "  const [message, setMessage] = React.useState<string>('')",
+                    "",
+                    "  const print = (text: string) => {",
+                        "    setMessage(text)",
+                        "  }",
+                        "",
+                        "  const values = useMemo(() => {",
+                            "    return { message, print }",
+                            "  }, [print])",
+                            "",
+                            "  return (",
+                                "    <${0:Name}Context.Provider value={values}>{children}</${0:Name}Context.Provider>",
+                                "  )",
+                                "}",
+                                "",
+                                "type HookProps = {",
+                                    "  // To fill or delete",
+                                    "}",
+                                    "export const use${0:Name} = ({}: HookProps) => {",
+                                        "  const ${1:name}Context = React.useContext(${0:Name}Context)",
+                                        "  if (!${1:name}Context) {",
+                                            "    throw new Error('use${0:Name} has to be used within <${0:Name}Provider>')",
+                                            "  }",
+                                            "  return ${1:name}Context",
+                                            "}",
+
+        ]
+    }, 
+    "React forwardRef": {
+        "scope": "javascriptreact, typescriptreact",
+        "prefix": "mtrfr",
+        "body": [
+            "import React, { ComponentProps, forwardRef } from 'react';",
+            "",
+            "type Props = unknown & ComponentProps<'$0'>;",
+            "",
+            "const $2 = forwardRef<HTML$1Element, Props>(function ({ ...props }, ref) {",
+                "return <$0 {...props} ref={ref} />;",
+                "});",
+                "",
+                "$2.displayName = '$2';",
+                "",
+                "export default $2;",
+        ]
+    },
+}
