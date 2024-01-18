@@ -44,14 +44,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
--- vim.keymap.set('t', '<C- >', "<C-\\><C-n><C-w>h",{silent = true})
-
--- map <Leader>t :term ++close<cr>
--- tmap <Leader>t <c-w>:term ++close<cr>
-
--- vim.keymap.set("n", "<leader>t", ":term ++close<C-r>")
--- vim.keymap.set("t", "<leader>t", "<C-w>:term ++close<C-r>")
--- Map <leader>o & <leader>O to newline without insert mode
 vim.keymap.set("n", "<leader>o",
   [[:<C-u>call append(line("."), repeat([""], v:count1))<CR>]],
   { silent = true, desc = "newline below (no insert-mode)" })

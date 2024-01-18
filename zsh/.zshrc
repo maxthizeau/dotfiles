@@ -10,7 +10,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/Library/PostgreSQL/14/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/maximethizeau/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_DISABLE_COMPFIX="true"
 
