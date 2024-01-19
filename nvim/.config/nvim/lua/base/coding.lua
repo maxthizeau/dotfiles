@@ -148,27 +148,27 @@ return {
 			}
 		end,
 	},
-	{
-		"L3MON4D3/LuaSnip",
-		dependencies = {
-			{
-				"rafamadriz/friendly-snippets",
-				config = function()
-					-- require("luasnip.loaders.from_vscode").lazy_load()
-					require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/snippets" } })
-				end,
-			},
-		},
-		build = "make install_jsregexp",
-		opts = {
-			history = true,
-			delete_check_events = "TextChanged",
-		},
+	-- {
+	-- 	"L3MON4D3/LuaSnip",
+	-- 	dependencies = {
+	-- 		{
+	-- 			-- "rafamadriz/friendly-snippets",
+	-- 			config = function()
+	-- 				-- require("luasnip.loaders.from_vscode").lazy_load()
+	-- 				require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/snippets" } })
+	-- 			end,
+	-- 		},
+	-- 	},
+	-- 	build = "make install_jsregexp",
+	-- 	opts = {
+	-- 		history = true,
+	-- 		delete_check_events = "TextChanged",
+	-- 	},
 
-		config = function(_, opts)
-			require("luasnip").setup(opts)
-		end,
-	},
+	-- 	config = function(_, opts)
+	-- 		require("luasnip").setup(opts)
+	-- 	end,
+	-- },
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",

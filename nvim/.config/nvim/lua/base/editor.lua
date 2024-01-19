@@ -14,18 +14,6 @@ return {
 					i = {
 						["<C-u>"] = false,
 						["<C-d>"] = false,
-						-- ["<C-j>"] = function(...)
-						--   require("telescope.actions").move_selection_next(...)
-						-- end,
-						-- ["<C-k>"] = function(...)
-						--   require("telescope.actions").move_selection_previous(...)
-						-- end,
-						-- ["<C-n>"] = function(...)
-						--   require("telescope.actions").cycle_history_next(...)
-						-- end,
-						-- ["<C-p>"] = function(...)
-						--   require("telescope.actions").cycle_history_prev(...)
-						-- end,
 					},
 				},
 			},

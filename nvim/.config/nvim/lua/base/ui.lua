@@ -89,7 +89,6 @@ return {
 			vim.keymap.set("n", "<leader>pf", ":NvimTreeFindFile<cr>")
 		end,
 	},
-	-- Note to myself: disabled while searching what it does
 	{
 		"folke/noice.nvim",
 		dependencies = {
@@ -115,6 +114,7 @@ return {
 					view = "mini",
 				},
 			},
+
 			presets = {
 				bottom_search = true, -- use a classic bottom cmdline for search
 				command_palette = true, -- position the cmdline and popupmenu together

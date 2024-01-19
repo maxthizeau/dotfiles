@@ -4,7 +4,6 @@ brew install stow
 # stow dotfiles
 stow -R nvim
 stow -R tmux
-stow -R .tmux
 stow -R zsh
 
 # # add zsh as a login shell
