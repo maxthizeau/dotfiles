@@ -28,10 +28,7 @@ keymap("n", "<leader>Y", '"+Y')
 keymap("n", "<leader>d", '"_d', { desc = "Delete to void register" })
 keymap("v", "<leader>d", '"_d', { desc = "Delete to void register" })
 
--- Jump to another project - Do not work rn, I need to install tmux i guess
--- keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
--- Quickfix navigation / Quickfix list (dont know what it means but lets see)
+-- Quickfix navigation / Quickfix list
 keymap("n", "<C-k>", "<cmd>cnext<CR>zz", { desc = "Quickfix navigation" })
 keymap("n", "<C-j>", "<cmd>cprev<CR>zz")
 keymap("n", "<leader>k", "<cmd>lnext<CR>zz")
@@ -72,3 +69,6 @@ keymap("n", "<Tab>", ">>", opts)
 keymap("n", "<S-Tab>", "<<", opts)
 keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
+
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })

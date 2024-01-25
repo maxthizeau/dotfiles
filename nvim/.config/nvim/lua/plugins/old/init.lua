@@ -1,0 +1,16 @@
+return {
+	-- require("base.plugins.01-base-plugins"),
+	-- require("base.plugins.03-treesitter"),
+	-- require("base.plugins.04-editor"),
+	-- require("base.plugins.05-coding"),
+	-- require("base.plugins.base-plugins"),
+	-- require("base.plugins.autocomplete"),
+	-- require("base.plugins.comment"),
+	-- require("base.plugins.gitsigns"),
+	-- require("base.plugins.indent"),
+	-- require("base.plugins.lsp"),
+	-- require("base.plugins.telescope"),
+	-- require("base.plugins.ui"),
+	-- require("base.plugins.treesitter"),
+	-- require("base.plugins.nvim-tree"),
+}

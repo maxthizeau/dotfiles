@@ -14,28 +14,17 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Configure lazy.nvim
 require("lazy").setup({
-	spec = {
-		{ import = "base" },
-		{ import = "pde" },
-	},
-	-- defaults = { lazy = true, version = nil },
-	install = { missing = true, colorscheme = { "tokyonight-storm", "catppuccin" } },
-	-- dev = { patterns = jit.os:find("Windows") and {} or { "alpha2phi" } },
-	-- checker = { enabled = true },
-	-- performance = {
-	-- 	cache = {
-	-- 		enabled = true,
-	-- 	},
-	-- 	rtp = {
-	-- 		disabled_plugins = {
-	-- 			"gzip",
-	-- 			"matchit",
-	-- 			"matchparen",
-	-- 			"tarPlugin",
-	-- 			"tohtml",
-	-- 			"tutor",
-	-- 			"zipPlugin",
-	-- 		},
-	-- 	},
-	-- },
+	{import = "plugins"},
+	{import = "plugins.lsp"}
+}, {
+  install = {
+    colorscheme = { "nightfly" },
+  },
+  checker = {
+    enabled = false,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
 })
