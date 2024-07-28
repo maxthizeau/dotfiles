@@ -38,8 +38,9 @@ return {
 				on_attach = custom_attach,
 			})
 			-- vim.cmd(":NvimTreeOpen")
-			vim.keymap.set("n", "<leader>pv", ":NvimTreeFocus<cr>")
-			vim.keymap.set("n", "<leader>pf", ":NvimTreeFindFile<cr>")
+			vim.keymap.set("n", "<leader>pc", "<cmd>NvimTreeToggle<CR>", { desc = "Close/open file explorer" }) -- toggle file explorer
+			vim.keymap.set("n", "<leader>pv", ":NvimTreeFocus<cr>", { desc = "Open/Focus file explorer" })
+			vim.keymap.set("n", "<leader>pf", ":NvimTreeFindFile<cr>", { desc = "Focus current file in file explorer" })
 		end,
 	},
 }

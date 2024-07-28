@@ -31,41 +31,38 @@ local function fn(
 	parent, -- parent snippet or parent node
 	user_args -- user_args from opts.user_args
 )
-	return '[' .. args[1][1] .. user_args .. ']'
+	return "[" .. args[1][1] .. user_args .. "]"
 end
 
 ls.add_snippets("all", {
 	s("ternary", {
 		-- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
-		i(1, "cond"), t(" ? "), i(2, "then"), t(" : "), i(3, "else")
-	})
+		i(1, "cond"),
+		t(" ? "),
+		i(2, "then"),
+		t(" : "),
+		i(3, "else"),
+	}),
 })
 
 ls.add_snippets("typescriptreact", {
-	s("mtrfc",
-		{
-			t({ "import React from 'react'",
-				"",
-				"type Props = " }),
-			i(2, "unknown"),
-			t({ "",
-				"const " }),
-			i(1, "ComponentName"),
-			t({
-				": React.FC<Props> = () => {",
-				"  return (",
-				"   <>",
-				"        " }),
-			i(3, "content"),
-			t({ "    </>",
-				"  )",
-				"}",
-				"",
-				"export default " }),
-			rep(1)
+	s("mtrfc", {
+		t({ "import React from 'react'", "", "type Props = " }),
+		i(2, "unknown"),
+		t({ "", "const " }),
+		i(1, "ComponentName"),
+		t({
+			": React.FC<Props> = () => {",
+			"  return (",
+			"   <>",
+			"        ",
+		}),
+		i(3, "content"),
+		t({ "    </>", "  )", "}", "", "export default " }),
+		rep(1),
 
-			-- t ' i(2)->', i(2), t '<-i(2) i(0)->', i(0),
-		})
+		-- t ' i(2)->', i(2), t '<-i(2) i(0)->', i(0),
+	}),
 })
 
 -- // type EntitiesResultContainerProps = {
@@ -81,27 +78,23 @@ ls.add_snippets("typescriptreact", {
 -- // }
 
 ls.add_snippets("typescriptreact", {
-	s("twfc",
-		{
-			t({ "type " }),
-			i(1, "ComponentName"),
-			t({ "Props = {",
-				"",
-				"} & ComponentProps<\"" }),
-			i(2, "div"),
-			t({ "\">", "", "" }),
-			t({ "const " }),
-			rep(1),
-			t({ ": React.FC<" }),
-			rep(1),
-			t({ "Props> = ({className, ...props}) => {",
-				"    return (",
-				"    <" }
-			),
-			rep(2),
-			t({ "",
-				"    className={twMerge(\"\", className)}",
-				"    {...props} />", "  )", "}" })
-
-		})
+	s("twfc", {
+		t({ "type " }),
+		i(1, "ComponentName"),
+		t({ "Props = {", "", '} & ComponentProps<"' }),
+		i(2, "div"),
+		t({ '">', "", "" }),
+		t({ "const " }),
+		rep(1),
+		t({ ": React.FC<" }),
+		rep(1),
+		t({ "Props> = ({className, ...props}) => {", "    return (", "    <" }),
+		rep(2),
+		t({ "", '    className={twMerge("", className)}', "    {...props} />", "  )", "}" }),
+	}),
 })
+
+-- const Name : FC<ComponentProps<'type'>> = ({className, ...props}) => {
+--   return <type className={twMerge(clsx('', className))} ...props />
+-- }
+--

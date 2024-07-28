@@ -97,7 +97,14 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-
+		lspconfig["solidity"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+			filetypes = { "solidity" },
+			root_dir = lspconfig.util.root_pattern(".prettierrc"),
+			single_file_support = true,
+		})
 		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
