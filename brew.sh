@@ -6,3 +6,5 @@ brew install ripgrep
 brew install fzf
 brew install tree
 brew install zsh
+brew install --HEAD macmade/tap/trash
+

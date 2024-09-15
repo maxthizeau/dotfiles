@@ -143,6 +143,17 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["gopls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		vim.filetype.add({ extension = { templ = "templ" } })
+		lspconfig["templ"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
