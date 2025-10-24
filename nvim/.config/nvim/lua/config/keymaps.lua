@@ -1,3 +1,7 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+--
 local keymap = vim.keymap.set
 
 -- Move the selection up by pressing Alt+k
@@ -36,25 +40,23 @@ keymap("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- Search and replace the current word
 keymap(
-	"n",
-	"<leader>rw",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ desc = "Search and replace the current word" }
+  "n",
+  "<leader>rw",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Search and replace the current word" }
 )
--- Make it executable
--- keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Make it executable" })
 
 keymap(
-	"n",
-	"<leader>o",
-	[[:<C-u>call append(line("."), repeat([""], v:count1))<CR>]],
-	{ silent = true, desc = "newline below (no insert-mode)" }
+  "n",
+  "<leader>o",
+  [[:<C-u>call append(line("."), repeat([""], v:count1))<CR>]],
+  { silent = true, desc = "newline below (no insert-mode)" }
 )
 keymap(
-	"n",
-	"<leader>O",
-	[[:<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>]],
-	{ silent = true, desc = "newline above (no insert-mode)" }
+  "n",
+  "<leader>O",
+  [[:<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>]],
+  { silent = true, desc = "newline above (no insert-mode)" }
 )
 
 -- <ctrl-s> to Save
@@ -69,6 +71,17 @@ keymap("n", "<Tab>", ">>", opts)
 keymap("n", "<S-Tab>", "<<", opts)
 keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
+keymap("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+
+-- Map Cmd+V to paste from system clipboard
+vim.keymap.set("n", "<D-v>", '"+p', { desc = "Paste from system clipboard" })
+vim.keymap.set("i", "<D-v>", "<C-r>+", { desc = "Paste from system clipboard" })
+vim.keymap.set("v", "<D-v>", '"+p', { desc = "Paste from system clipboard" })
+
+-- Map Cmd+C to copy to system clipboard
+vim.keymap.set("v", "<D-c>", '"+y', { desc = "Copy to system clipboard" })
+
+-- Map Cmd+X to cut to system clipboard
+vim.keymap.set("v", "<D-x>", '"+x', { desc = "Cut to system clipboard" })
