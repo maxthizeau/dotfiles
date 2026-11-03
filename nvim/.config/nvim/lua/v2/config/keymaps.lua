@@ -1,7 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
---
 local keymap = vim.keymap.set
 
 -- Move the selection up by pressing Alt+k
@@ -85,3 +81,5 @@ vim.keymap.set("v", "<D-c>", '"+y', { desc = "Copy to system clipboard" })
 
 -- Map Cmd+X to cut to system clipboard
 vim.keymap.set("v", "<D-x>", '"+x', { desc = "Cut to system clipboard" })
+vim.keymap.set("i", "<Esc>", "<C-c>", { noremap = true })
+vim.keymap.set("n", "<Esc>", "<C-c>", { noremap = true })

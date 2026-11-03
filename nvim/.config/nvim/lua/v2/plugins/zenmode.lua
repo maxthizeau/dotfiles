@@ -1,10 +1,8 @@
 return {
   {
-    "folke/snacks.nvim",
-    keys = {
-      -- Disable the default marks keymap
-      { "<leader>sm", false },
-    },
+    "stevearc/snacks.nvim",
+    event = "VeryLazy",
+    opts = {},
   },
   {
     "szw/vim-maximizer",

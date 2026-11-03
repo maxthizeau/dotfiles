@@ -81,32 +81,6 @@ function NvimTreeOpenFinder()
 end
 
 return {
-  -- {
-  --
-  --   "nvim-tree/nvim-web-devicons",
-  -- },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    enabled = false,
-    -- dependencies = {
-    --   "nvim-lua/plenary.nvim",
-    --   "MunifTanjim/nui.nvim",
-    -- },
-  },
-  {
-    {
-      "folke/snacks.nvim",
-      opts = {
-        bigfile = { enabled = true },
-        statuscolumn = { enabled = true },
-        scope = { enabled = true },
-        gitbrowse = { enabled = true },
-        scroll = { enabled = false },
-        -- explorer = { enabled = false, replace_netrw = false },
-      },
-    },
-  },
-  -- Setup nvim-tree
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
@@ -180,16 +154,3 @@ return {
     },
   },
 }
--- -- File explorer configuration for LazyVim
--- -- Place this file in: lua/plugins/file-explorer.lua
---
--- -- Define the trash function globally so it can be used in keymaps
---
--- return {
---   -- Disable neo-tree
---   {
---     "nvim-neo-tree/neo-tree.nvim",
---     enabled = false,
---   },
---
--- }

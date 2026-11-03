@@ -1,8 +1,4 @@
 return {
-  -- Disable LazyVim's default comment configuration
-  { "echasnovski/mini.comment", enabled = false },
-
-  -- Add your custom Comment.nvim configuration
   {
     "numToStr/Comment.nvim",
     event = { "BufReadPre", "BufNewFile" },
